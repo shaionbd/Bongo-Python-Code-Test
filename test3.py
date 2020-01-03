@@ -46,6 +46,6 @@ if __name__ == '__main__':
 
     ancestor = lca(node1, node3)
     if ancestor:
-        print(ancestor.value)
+        print("{} & {} ancestor is: {}".format(node1.value, node3.value, ancestor.value))
     else:
         print("No ancestor found")

@@ -25,9 +25,10 @@ class TestTask1Method(unittest.TestCase):
             }
         }
         depth_data = test1.depth(data, 1, [])
-        sort_data = sorted(depth_data, key=lambda data: data[1])
-        expected_data = [('key1', 1), ('key2', 1), ('key3', 2), ('key4', 2), ('key9', 2), ('key5', 3), ('key6', 3), ('key7', 3), ('key8', 4)]
-        self.assertEqual(expected_data, sort_data)
+        # print(depth_data)
+        # sort_data = sorted(depth_data, key=lambda data: data[1])
+        expected_data = [('key1', 1), ('key2', 1), ('key3', 2), ('key4', 2), ('key5', 3), ('key6', 3), ('key7', 3), ('key8', 4), ('key9', 2)]
+        self.assertEqual(expected_data, depth_data)
 
     def test_depth_of_test2(self):
         person_a = test2.Person("User", "1", None)
@@ -45,9 +46,9 @@ class TestTask1Method(unittest.TestCase):
             },
         }
         depth_data = test2.depth(data, 1, [])
-        sort_data = sorted(depth_data, key=lambda data: data[1])
-        expected_data = [('key1', 1), ('key2', 1), ('key3', 2), ('key4', 2), ('key6', 2), ('key5', 3), ('user', 3), ('first_name', 3), ('last_name', 3), ('father', 3), ('first_name', 4), ('last_name', 4), ('father', 4), ('first_name', 4), ('last_name', 4), ('father', 4), ('first_name', 5), ('last_name', 5), ('father', 5), ('first_name', 5), ('last_name', 5), ('father', 5)]
-        self.assertEqual(expected_data, sort_data)
+        # depth_data = sorted(depth_data, key=lambda data: data[1])
+        expected_data = [('key1', 1), ('key2', 1), ('key3', 2), ('key4', 2), ('key5', 3), ('user', 3), ('first_name', 4), ('last_name', 4), ('father', 4), ('first_name', 5), ('last_name', 5), ('father', 5), ('key6', 2), ('first_name', 3), ('last_name', 3), ('father', 3), ('first_name', 4), ('last_name', 4), ('father', 4), ('first_name', 5), ('last_name', 5), ('father', 5)]
+        self.assertEqual(expected_data, depth_data)
 
     def test_lca(self):
         node1 = test3.Node(1)

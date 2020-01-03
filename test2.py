@@ -56,8 +56,8 @@ def print_depth(data):
         print(data)
     else:
         depth_data = depth(data, 1, [])
-        sort_data = sorted(depth_data, key=lambda data: data[1])
-        for datam in sort_data:
+        # sort_data = sorted(depth_data, key=lambda data: data[1])
+        for datam in depth_data:
             print(datam[0], datam[1])
 
 
