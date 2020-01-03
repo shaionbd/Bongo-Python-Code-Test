@@ -1,4 +1,7 @@
 """
+:TODO Answer of "Explain the Runtime and Memory requirements for your solution."
+Explanation of the Runtime and Memory requirements for my solution.
+
 Time Complexity: Time complexity of above solution is O(h) where h is height of tree. Because you call the wile loop from
 bottom(node_left/node_right) and jump it's previous parent which exists on bottom-1 tree and Continue it.
 So runtime will be O(h).
