@@ -1,4 +1,8 @@
-
+"""
+Time & Space Complexity:
+Time Complexity: O(NxM) # N = Number of expenses; M = Number of Users
+Space Complexity: O(NxM)
+"""
 
 class Expense:
     def __init__(self, expenses):
