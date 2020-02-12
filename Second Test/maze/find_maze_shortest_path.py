@@ -69,6 +69,10 @@ class Maze:
         row = start_x if start_x else self.row
         col = start_y if start_y else self.col
 
+        # check start state is valid
+        if not self.path_valid(row, row):
+            return "Path is not valid"
+
         # make started state as visited
         self.visited[(row, col)] = True
         # insert started state on a queue
