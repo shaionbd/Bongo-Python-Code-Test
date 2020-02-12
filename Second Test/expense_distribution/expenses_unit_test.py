@@ -1,5 +1,5 @@
 import unittest
-from .find_expenses import Expense
+from .distribute_expense import Expense
 
 
 class TestExpensesMethod(unittest.TestCase):

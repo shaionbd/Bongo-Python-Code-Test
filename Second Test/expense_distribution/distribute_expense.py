@@ -67,5 +67,5 @@ if __name__ == '__main__':
         {'user': 'user_4', 'amount': 90, 'shared_by': ['user_4', 'user_3']},
     ]
     expense = Expense(expense_input)
-    distributed_exp = expense.find_distributed_sexpense()
+    distributed_exp = expense.find_distributed_expense()
     print(distributed_exp)
