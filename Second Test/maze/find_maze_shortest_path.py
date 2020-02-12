@@ -28,9 +28,16 @@ class Maze:
         self.position_vals = ["Left", "Right", "Up", "Down"]
         self.positions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
         self.goal = goal
+        self.visited = {}
+        self.queue = []
+        self.path = []
+
+    def __init_info(self):
         # initially assign all point as a not visited type
         self.visited = {(r, c): False for c in range(self.N) for r in range(self.M)}
+        # empty queue
         self.queue = []
+        # empty output path
         self.path = []
 
     def path_valid(self, row, col):
@@ -57,11 +64,11 @@ class Maze:
             path_len -= 1
         return ' >> '.join(final_path[::-1])
 
-    def find_min_path(self, row=None, col=None):    # main function which find the shortest path in BFS ways
-        if row is None:
-            row = self.row
-        if col is None:
-            col = self.col
+    def find_min_path(self, start_x=None, start_y=None):    # main function which find the shortest path in BFS ways
+        self.__init_info()
+        row = start_x if start_x else self.row
+        col = start_y if start_y else self.col
+
         # make started state as visited
         self.visited[(row, col)] = True
         # insert started state on a queue
@@ -94,9 +101,12 @@ if __name__ == '__main__':
         [0, 1, 0, 0, 0, 1],
         [0, 0, 0, 1, 0, 1],
         [0, 1, 2, 1, 0, 1],
-        [0, 1, 0, 1, 0, 2],
+        [0, 1, 0, 1, 1, 2],
         [0, 0, 0, 1, 0, 0]
     ]
 
     maze_obj = Maze(maze)
+    # start from (0, 0) state
     print(maze_obj.find_min_path())
+    # start from (2,4) state
+    print(maze_obj.find_min_path(start_x=2, start_y=4))
