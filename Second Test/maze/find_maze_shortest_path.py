@@ -107,6 +107,6 @@ if __name__ == '__main__':
 
     maze_obj = Maze(maze)
     # start from (0, 0) state
-    print(maze_obj.find_min_path())
-    # start from (2,4) state
-    print(maze_obj.find_min_path(start_x=2, start_y=4))
+    print("Output from (0, 0): {}".format(maze_obj.find_min_path()))
+    # start from (4,4) state
+    print("Output from (4, 4): {}".format(maze_obj.find_min_path(start_x=4, start_y=4)))
